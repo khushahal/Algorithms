@@ -1,7 +1,7 @@
 
 
 const _isPrime = (no) => {
-  for (let i = 2; i <= Math.sqrt(no); ++i) {
+  for (let i = 2; i <= no ** (1/2); ++i) {
     if (no % i == 0) 
       return false;
   }
