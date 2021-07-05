@@ -18,7 +18,6 @@ Array.prototype.filterModified = function (callback) {
     return _result;
 };
 
-
 let _filteredArray = _array.filterModified((i, index, arr) => {
     return i % 2;
 });
