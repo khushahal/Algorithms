@@ -35,8 +35,6 @@ class BST {
   _find(value) {
     if (this._isEmpty()) return null;
 
-
-   
     let it = this.root;
     let isExist = false;
 
