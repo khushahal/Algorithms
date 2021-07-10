@@ -2,9 +2,6 @@
 
 A detailed look for the data structure and algorithms in javascript.
 
-# Apporach of Solving Problems
-
-
    # 1. Dynamic Programming:-
 
         1. Dynmaic Programming is used for optimizing the recursion based problems.
