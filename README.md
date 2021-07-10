@@ -19,7 +19,7 @@ A detailed look for the data structure and algorithms in javascript.
 
         4. In these codes we have used Bottom-up-approach.
 
-   # Binary Search Tree
+   # 2. Binary Search Tree
 
       1. A kind of tree that follows following property:-
          a. Each node is greater than its left child.
