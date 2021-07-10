@@ -28,7 +28,7 @@ A detailed look for the data structure and algorithms in javascript.
       2. No of BST possible with 'n' keys = 2nCn / (n+1).  'Catalan Number';
 
       3. Complexity:-  
-         a. Best Case and Average Case Complexity - O(logn)   (Insertion, Deletion, Searching)
-         b. Worst Case - O(n)  (Insertion, Deletion, Searching)
+         a. Best Case and Average Case Complexity - O(logn)   
+         b. Worst Case - O(n)  
 
       
