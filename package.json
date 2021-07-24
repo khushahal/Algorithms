@@ -1,0 +1,22 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Test cases of algos aw well as there codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SurajPandey186/Algorithms.git"
+  },
+  "author": "Suraj Bhushan Pandey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SurajPandey186/Algorithms/issues"
+  },
+  "homepage": "https://github.com/SurajPandey186/Algorithms#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
