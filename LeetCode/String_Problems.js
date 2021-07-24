@@ -1,3 +1,5 @@
+
+/* Problem Code - */
 let arrayStringsAreEqual = function (word1, word2) {
   let sentence_1 = "";
   let sentence_2 = "";
@@ -15,3 +17,18 @@ let arrayStringsAreEqual = function (word1, word2) {
 };
 
 console.log(arrayStringsAreEqual(["abc", "d", "defg"], ["abcddefg"]));
+
+
+/* 1689. Partitioning Into Minimum Number Of Deci-Binary Numbers */
+
+let minPartitions = function(n) {
+    
+  let max = n[0];
+  
+  for(let i = 1; i < n.length; ++i) {
+      if(+n[i] > max) 
+          max = +n[i];
+  }
+  
+  return max;
+};
