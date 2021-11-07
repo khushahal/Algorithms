@@ -1,4 +1,4 @@
-
+const log = module('../Utils.js');
 
 const _create2DArray = (rows, columns) => {
   const _two2dArray = [];
@@ -33,5 +33,5 @@ const _LCSTRING = (str1, str2) => {
   return _LCS[i-1][j-1];
 };
 
-console.log(_LCSTRING("abc", "def"));
+log(_LCSTRING("abc", "def"));
 
