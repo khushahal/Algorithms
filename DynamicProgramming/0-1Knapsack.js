@@ -16,14 +16,14 @@ const tempArray = Utils._create2DArray(values.length + 1, target + 1);
 // Memojize 
 tempArray.forEach(element => element.fill(-1));
 
-const knapSack = (values, weights, n, target) => {
+const MemoizedVersionknapSack = (values, weights, n, target) => {
 
   if (target === 0 || n === 0) {
     return 0;
   }
 
   if (weights[n - 1] > target) {
-    tempArray[n][target] = knapSack(values, weights, n - 1, target)
+    tempArray[n][target] = MemoizedVersionknapSack(values, weights, n - 1, target)
     return tempArray[n][target];
   }
 
@@ -32,14 +32,14 @@ const knapSack = (values, weights, n, target) => {
   }
 
   if (weights[n - 1] <= target) {
-    const exclude = knapSack(values, weights, n - 1, target);
-    const include = weights[n - 1] + knapSack(values, weights, n - 1, target - weights[n - 1]);
+    const exclude = MemoizedVersionknapSack(values, weights, n - 1, target);
+    const include = weights[n - 1] + MemoizedVersionknapSack(values, weights, n - 1, target - weights[n - 1]);
     tempArray[n][target] = Math.max(exclude, include);
     return tempArray[n][target];
   }
 }
 
-console.log(knapSack(values, weights, values.length, target));
+console.log(MemoizedVersionknapSack(values, weights, values.length, target));
 
 
 
