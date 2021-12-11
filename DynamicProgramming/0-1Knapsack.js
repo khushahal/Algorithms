@@ -1,28 +1,46 @@
+const Utils = require('../Utils');
+/**
+ * @description recursive approach for the knapsack.
+ * @param {array} values 
+ * @param {array} weights 
+ * @param {integer} n 
+ * @param {integer} target 
+ * @returns {integer}
+ */
+
+const target = 15;
+const values = [1, 2, 3, 4];
+const weights = [4, 5, 5, 2];
+const tempArray = Utils._create2DArray(values.length + 1, target + 1);
+
+// Memojize 
+tempArray.forEach(element => element.fill(-1));
+
 const knapSack = (values, weights, n, target) => {
-    //base case: when we cannot have take more items
-    if(target < 0){
-      return Number.MIN_SAFE_INTEGER;
-    }
-    
-    //base case: when no items are left or capacity becomes 0
-    if(n < 0 || target === 0){
-      return 0;
-    }
-    
-    // pick current item n in knapSack and recur for
-    // remaining items (n - 1) with reduced capacity (weight - weights[n])
-    let include = values[n] + knapSack(values, weights, n - 1, target - weights[n]);
-  
-    // leave the current item n from knapSack and recur for
-    // remaining items (n - 1)
-    let exclude = knapSack(values, weights, n - 1, target);
-    
-    // return maximum value we get by picking or leaving the current item
-    return Math.max(include, exclude);
+
+  if (target === 0 || n === 0) {
+    return 0;
+  }
+
+  if (weights[n - 1] > target) {
+    tempArray[n][target] = knapSack(values, weights, n - 1, target)
+    return tempArray[n][target];
+  }
+
+  if(tempArray[n][target] != -1) {
+      return tempArray[n][target];
+  }
+
+  if (weights[n - 1] <= target) {
+    const exclude = knapSack(values, weights, n - 1, target);
+    const include = weights[n - 1] + knapSack(values, weights, n - 1, target - weights[n - 1]);
+    tempArray[n][target] = Math.max(exclude, include);
+    return tempArray[n][target];
+  }
 }
 
-const values = [1, 2, 3];
-const weights = [4, 2, 5];
-const target = 10;
+console.log(knapSack(values, weights, values.length, target));
 
-console.log(knapSack(values, weights, values.length - 1, target));
+
+
+

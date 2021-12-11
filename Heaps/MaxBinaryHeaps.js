@@ -48,7 +48,13 @@ class MaxHeap {
     _isEmpty() {
         return !this.values.length;
     }
-   
+
+    createMaxHeap(array) {
+        if()
+        for(let i = 0; i < array.length; i++) {
+
+        }
+    }
 }
 
 let maxHeap = new MaxHeap();

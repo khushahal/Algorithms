@@ -12,8 +12,7 @@ const _create2DArray = (rows, columns) => {
     return _two2dArray;
 };
 
-
-module.export = {
+module.exports = {
     log,
     _create2DArray
-};
+}
